@@ -8,5 +8,5 @@ target 'MessengerWithMVVM' do
   # Pods for MessengerWithMVVM
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
-
+  pod 'RxReachability', '~> 1.2.1'
 end

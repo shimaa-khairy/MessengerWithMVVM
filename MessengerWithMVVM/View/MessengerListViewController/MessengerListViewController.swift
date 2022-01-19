@@ -8,13 +8,19 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Reachability
+import RxReachability
+
 class MessengerListViewController: UIViewController {
     
     @IBOutlet weak var messengerTableview: UITableView!
-    
+    @IBOutlet weak var ConnectionView: UIView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var ContainerViewTopConstraint: NSLayoutConstraint!
+    
     var viewModel = MessengerViewModel()
     var disposeBag = DisposeBag()
+    var reachability: Reachability?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +28,7 @@ class MessengerListViewController: UIViewController {
         setupTableview()
         bindSelectedItem()
         bindTableHideen()
+        bindReachability()
         setupNavigationItem()
         
     }
@@ -46,7 +53,15 @@ class MessengerListViewController: UIViewController {
     func bindTableHideen(){
         viewModel.tableViewIsHidden.bind(to: containerView.rx.isHidden).disposed(by: disposeBag)
     }
-    
+    func bindReachability() {
+        Reachability.rx.isReachable
+            .subscribe(onNext: { isReachable in
+                print("Is reachable: \(isReachable)")
+                self.ContainerViewTopConstraint.constant = isReachable ? 0 : 30
+            })
+            .disposed(by: disposeBag)
+        Reachability.rx.isReachable.bind(to: ConnectionView.rx.isHidden).disposed(by: disposeBag)
+    }
     func setupNavigationItem(){
         let messageBtn = UIButton(type: UIButton.ButtonType.custom)
         messageBtn.setImage(UIImage(named: "newMessage"), for: .normal)

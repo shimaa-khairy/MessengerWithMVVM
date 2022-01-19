@@ -6,17 +6,22 @@
 //
 
 import UIKit
-
+import Reachability
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
+    var reachability : Reachability?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        try? reachability = Reachability()
+        try? reachability?.startNotifier()
         return true
     }
 
+    func applicationWillTerminate(_ application: UIApplication) {
+        reachability?.stopNotifier()
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

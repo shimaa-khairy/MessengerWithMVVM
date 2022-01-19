@@ -32,6 +32,23 @@
                                     <constraint firstItem="2SW-Un-oAL" firstAttribute="centerX" secondItem="KOU-cw-9ia" secondAttribute="centerX" id="fNU-Zj-exC"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P89-qo-f2n" userLabel="connectionView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anm-Uw-bco">
+                                        <rect key="frame" x="124" y="6" width="166.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29416878759200599" green="0.2927476823379383" blue="0.29558989284607362" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LKR-4t-sf7"/>
+                                    <constraint firstItem="anm-Uw-bco" firstAttribute="centerX" secondItem="P89-qo-f2n" secondAttribute="centerX" id="djN-m7-gkI"/>
+                                    <constraint firstItem="anm-Uw-bco" firstAttribute="centerY" secondItem="P89-qo-f2n" secondAttribute="centerY" id="qAP-Qr-mSZ"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEA-9f-8SE" userLabel="ContainerView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="753"/>
                                 <subviews>
@@ -65,17 +82,22 @@
                             <constraint firstItem="FC5-kI-gb4" firstAttribute="bottom" secondItem="O2w-n8-RIm" secondAttribute="bottom" id="3hC-dd-4lt"/>
                             <constraint firstItem="KOU-cw-9ia" firstAttribute="leading" secondItem="FC5-kI-gb4" secondAttribute="leading" constant="10" id="GKd-la-IkV"/>
                             <constraint firstItem="O2w-n8-RIm" firstAttribute="leading" secondItem="FC5-kI-gb4" secondAttribute="leading" id="Ja2-aC-BoX"/>
-                            <constraint firstItem="xEA-9f-8SE" firstAttribute="top" secondItem="FC5-kI-gb4" secondAttribute="top" id="K1Q-3v-tR9"/>
+                            <constraint firstItem="P89-qo-f2n" firstAttribute="top" secondItem="FC5-kI-gb4" secondAttribute="top" id="JdL-85-FS1"/>
                             <constraint firstItem="O2w-n8-RIm" firstAttribute="top" secondItem="KOU-cw-9ia" secondAttribute="bottom" constant="10" id="NfU-A2-fKw"/>
                             <constraint firstItem="xEA-9f-8SE" firstAttribute="leading" secondItem="FC5-kI-gb4" secondAttribute="leading" id="RHA-ya-sib"/>
                             <constraint firstItem="FC5-kI-gb4" firstAttribute="trailing" secondItem="O2w-n8-RIm" secondAttribute="trailing" id="VCQ-wh-FdW"/>
+                            <constraint firstItem="P89-qo-f2n" firstAttribute="leading" secondItem="FC5-kI-gb4" secondAttribute="leading" id="aTL-BP-f2d"/>
+                            <constraint firstItem="xEA-9f-8SE" firstAttribute="top" secondItem="P89-qo-f2n" secondAttribute="top" id="axn-YB-5Zh"/>
                             <constraint firstItem="FC5-kI-gb4" firstAttribute="trailing" secondItem="KOU-cw-9ia" secondAttribute="trailing" constant="10" id="dQH-JB-o9h"/>
+                            <constraint firstItem="FC5-kI-gb4" firstAttribute="trailing" secondItem="P89-qo-f2n" secondAttribute="trailing" id="fpv-2H-ndQ"/>
                             <constraint firstItem="O2w-n8-RIm" firstAttribute="top" secondItem="xEA-9f-8SE" secondAttribute="bottom" id="knf-kJ-TGH"/>
                             <constraint firstItem="FC5-kI-gb4" firstAttribute="trailing" secondItem="xEA-9f-8SE" secondAttribute="trailing" id="vk2-7K-VJe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chats" id="wUW-Z1-lCd"/>
                     <connections>
+                        <outlet property="ConnectionView" destination="P89-qo-f2n" id="Bd2-yN-H1j"/>
+                        <outlet property="ContainerViewTopConstraint" destination="axn-YB-5Zh" id="zd4-e2-N7W"/>
                         <outlet property="containerView" destination="xEA-9f-8SE" id="bGY-vq-xfn"/>
                         <outlet property="messengerTableview" destination="Pyy-Ti-IZl" id="Crb-Tt-0nS"/>
                     </connections>
