@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		6D03C8C5279315A2002FD9AF /* MessengerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03C8C4279315A2002FD9AF /* MessengerListViewController.swift */; };
 		6D03C8CD27932B91002FD9AF /* MessengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03C8CC27932B91002FD9AF /* MessengerCell.swift */; };
 		6D6A46B427970070003175D5 /* MessengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A46B327970070003175D5 /* MessengerViewModel.swift */; };
+		6D7F9738279741D600C08E18 /* ChatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F9737279741D600C08E18 /* ChatViewController.storyboard */; };
+		6D7F973B279741F100C08E18 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F973A279741F100C08E18 /* ChatViewController.swift */; };
 		6DF5574D27960F9200291FB2 /* MessengerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF5574C27960F9200291FB2 /* MessengerCell.xib */; };
 		6DF557592796140200291FB2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF557582796140200291FB2 /* Extensions.swift */; };
 		6DF5575C279614DE00291FB2 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF5575B279614DE00291FB2 /* ChatModel.swift */; };
@@ -36,6 +38,8 @@
 		6D03C8C4279315A2002FD9AF /* MessengerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerListViewController.swift; sourceTree = "<group>"; };
 		6D03C8CC27932B91002FD9AF /* MessengerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerCell.swift; sourceTree = "<group>"; };
 		6D6A46B327970070003175D5 /* MessengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewModel.swift; sourceTree = "<group>"; };
+		6D7F9737279741D600C08E18 /* ChatViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatViewController.storyboard; sourceTree = "<group>"; };
+		6D7F973A279741F100C08E18 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		6DF5574C27960F9200291FB2 /* MessengerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessengerCell.xib; sourceTree = "<group>"; };
 		6DF557582796140200291FB2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6DF5575B279614DE00291FB2 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
@@ -111,10 +115,8 @@
 		6D03C8BF279314C2002FD9AF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6D03C8C127931580002FD9AF /* MessengerListViewController.storyboard */,
-				6D03C8C4279315A2002FD9AF /* MessengerListViewController.swift */,
-				6DF5574C27960F9200291FB2 /* MessengerCell.xib */,
-				6D03C8CC27932B91002FD9AF /* MessengerCell.swift */,
+				6DF55C5127984240001C119D /* MessengerListViewController */,
+				6D7F9736279741A100C08E18 /* ChatViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +129,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6D7F9736279741A100C08E18 /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F9737279741D600C08E18 /* ChatViewController.storyboard */,
+				6D7F973A279741F100C08E18 /* ChatViewController.swift */,
+			);
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
 		6DF55757279613CE00291FB2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +145,17 @@
 				6DF5575E2796161600291FB2 /* Constants.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		6DF55C5127984240001C119D /* MessengerListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D03C8C127931580002FD9AF /* MessengerListViewController.storyboard */,
+				6D03C8C4279315A2002FD9AF /* MessengerListViewController.swift */,
+				6DF5574C27960F9200291FB2 /* MessengerCell.xib */,
+				6D03C8CC27932B91002FD9AF /* MessengerCell.swift */,
+			);
+			path = MessengerListViewController;
 			sourceTree = "<group>";
 		};
 		6EAF56F67266F7F7A1C245E3 /* Frameworks */ = {
@@ -203,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7F9738279741D600C08E18 /* ChatViewController.storyboard in Resources */,
 				6D03C8B327931321002FD9AF /* LaunchScreen.storyboard in Resources */,
 				6D03C8C227931580002FD9AF /* MessengerListViewController.storyboard in Resources */,
 				6D03C8B027931321002FD9AF /* Assets.xcassets in Resources */,
@@ -267,6 +290,7 @@
 				6D03C8AB27931320002FD9AF /* ViewController.swift in Sources */,
 				6D03C8A727931320002FD9AF /* AppDelegate.swift in Sources */,
 				6D03C8A927931320002FD9AF /* SceneDelegate.swift in Sources */,
+				6D7F973B279741F100C08E18 /* ChatViewController.swift in Sources */,
 				6DF5575F2796161600291FB2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

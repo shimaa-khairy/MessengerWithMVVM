@@ -35,8 +35,11 @@ class MessengerListViewController: UIViewController {
     }
     func bindSelectedItem(){
         Observable.zip(messengerTableview.rx.itemSelected ,messengerTableview.rx.modelSelected(ChatModel.self)).bind{index,model in
-            print(model.name ?? "")
-            //navigation
+            let vc = UIStoryboard(name: "ChatViewController", bundle: nil).instantiateViewController(identifier: "ChatViewController") as! ChatViewController
+            vc.chatModel = model
+            vc.row = index.row
+            vc.viewModel = self.viewModel
+            self.navigationController?.pushViewController(vc, animated: true)
         }.disposed(by: disposeBag)
     }
     

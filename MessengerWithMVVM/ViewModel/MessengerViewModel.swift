@@ -16,7 +16,7 @@ class MessengerViewModel{
     func fetchItems(){
         chats = [
             ChatModel(image:"sh", name: "Shimaa Khairy", lastMessage:"start chat and say Hi ", online: 0),
-            ChatModel(image:"mark", name: "Mark", lastMessage:"You: take care . 22:10", online: 0),
+            ChatModel(image:"mark", name: "Mark Zukerberg", lastMessage:"You: take care . 22:10", online: 0),
             ChatModel(image:"Einstein", name: "Albert Einstein", lastMessage:"start chat and say Hi", online: 70),
             ChatModel(image:"ProfilePic", name: "Shimaa", lastMessage:"You: take care . 22:10", online: 57),
             ChatModel(image:"ProfilePic", name: "Shimaa Khairy", lastMessage:"You: take care .  20:00", online: 70),

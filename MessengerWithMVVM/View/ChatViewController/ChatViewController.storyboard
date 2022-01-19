@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GaC-I1-cFJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat View Controller-->
+        <scene sceneID="FcZ-gG-pAo">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GaC-I1-cFJ" customClass="ChatViewController" customModule="MessengerWithMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KRS-TB-mgf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fq-pE-bWA" userLabel="ContainerView">
+                                <rect key="frame" x="0.0" y="243.5" width="414" height="409"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5lM-Gd-bvc" customClass="RoundedImageView" customModule="MessengerWithMVVM" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="0.0" width="204.5" height="204.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="5lM-Gd-bvc" secondAttribute="height" multiplier="1:1" id="kFj-x8-bXU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uX-vd-MWw">
+                                        <rect key="frame" x="186" y="234.5" width="42.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Say Hi!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivq-HD-k2T">
+                                        <rect key="frame" x="183" y="270" width="48" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="3uX-vd-MWw" firstAttribute="centerX" secondItem="0Fq-pE-bWA" secondAttribute="centerX" id="02J-9q-usZ"/>
+                                    <constraint firstItem="5lM-Gd-bvc" firstAttribute="centerX" secondItem="0Fq-pE-bWA" secondAttribute="centerX" id="7R1-5S-VtP"/>
+                                    <constraint firstItem="ivq-HD-k2T" firstAttribute="top" secondItem="3uX-vd-MWw" secondAttribute="bottom" constant="15" id="DUO-f4-PYj"/>
+                                    <constraint firstItem="ivq-HD-k2T" firstAttribute="centerX" secondItem="0Fq-pE-bWA" secondAttribute="centerX" id="Pea-En-dRM"/>
+                                    <constraint firstItem="3uX-vd-MWw" firstAttribute="top" secondItem="5lM-Gd-bvc" secondAttribute="bottom" constant="30" id="R7t-JL-sC8"/>
+                                    <constraint firstItem="5lM-Gd-bvc" firstAttribute="top" secondItem="0Fq-pE-bWA" secondAttribute="top" id="hmu-Id-hnA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p0L-fn-brV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p0L-fn-brV" firstAttribute="trailing" secondItem="0Fq-pE-bWA" secondAttribute="trailing" id="DbA-kt-zBI"/>
+                            <constraint firstItem="5lM-Gd-bvc" firstAttribute="height" secondItem="0Fq-pE-bWA" secondAttribute="height" multiplier="1:2" id="QLK-PN-hDC"/>
+                            <constraint firstItem="0Fq-pE-bWA" firstAttribute="leading" secondItem="p0L-fn-brV" secondAttribute="leading" id="Yi0-vN-BVf"/>
+                            <constraint firstItem="0Fq-pE-bWA" firstAttribute="centerX" secondItem="KRS-TB-mgf" secondAttribute="centerX" id="bGi-on-hQB"/>
+                            <constraint firstItem="0Fq-pE-bWA" firstAttribute="height" secondItem="p0L-fn-brV" secondAttribute="height" multiplier="1:2" id="cRj-wp-M7G"/>
+                            <constraint firstItem="0Fq-pE-bWA" firstAttribute="centerY" secondItem="KRS-TB-mgf" secondAttribute="centerY" id="j2e-vo-aAJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="message" destination="ivq-HD-k2T" id="bIY-0D-n4D"/>
+                        <outlet property="name" destination="3uX-vd-MWw" id="Ro4-p5-If2"/>
+                        <outlet property="profileImg" destination="5lM-Gd-bvc" id="yoA-Zf-i4q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="peF-XM-o5G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-245" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
